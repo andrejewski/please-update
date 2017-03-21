@@ -1,7 +1,7 @@
 {
   "name": "please-update",
   "description": "Notify when you release a new version",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Chris Andrejewski <christopher.andrejewski@gmail.com>",
   "ava": {
     "require": [
