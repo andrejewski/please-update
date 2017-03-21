@@ -41,6 +41,8 @@ update({
 The [`is-ci`](https://github.com/watson/is-ci) library detects if a command runs on CI servers.
 If so, no message prints.
 
+The [`has-yarn`](https://github.com/sindresorhus/has-yarn) library determines whether to display the Yarn upgrade command or the NPM update command.
+
 The default message will contain [emoji](https://github.com/omnidan/node-emoji) when supported.
 
 ## Documentation
