@@ -34,6 +34,17 @@ test('getConfig() should reject for fs errors other than missing file', t => {
     .then(() => fs.rmdirSync(filepath))
 })
 
+test('getConfig() should resolve an empty config if file has no text', t => {
+  const filename = 'empty-config'
+  const filepath = path.join(__dirname, filename)
+
+  fs.writeFileSync(filepath, '')
+  return getConfig(filepath).then(config => {
+    t.deepEqual(config, {})
+    fs.unlinkSync(filepath)
+  })
+})
+
 test('getConfig() should reject if the config is not JSON', t => {
   const filename = 'malformed-config'
   const filepath = path.join(__dirname, filename)

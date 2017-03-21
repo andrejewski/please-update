@@ -15,6 +15,10 @@ export function getConfig (filepath) {
         return reject(error)
       }
 
+      if (text.length < 1) {
+        return resolve({})
+      }
+
       try {
         const data = JSON.parse(text)
         return resolve(data)

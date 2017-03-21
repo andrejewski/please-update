@@ -1,7 +1,7 @@
 {
   "name": "please-update",
   "description": "Notify when you release a new version",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Chris Andrejewski <christopher.andrejewski@gmail.com>",
   "ava": {
     "require": [
@@ -87,13 +87,13 @@
     "url": "git+https://github.com/andrejewski/please-update.git"
   },
   "scripts": {
-    "build": "gulp",
+    "build": "npm run lint && gulp",
     "coveralls": "npm run report && nyc report --reporter=text-lcov | coveralls",
     "lint": "standard --fix && fixpack",
     "prepublish": "npm run build && npm run test",
     "report": "NODE_ENV=nyc nyc npm test",
-    "test": "npm run lint && ava",
-    "test-ci": "npm run prepublish",
+    "test": "npm run build && ava",
+    "test-ci": "npm run build && ava --serial",
     "watch": "gulp watch"
   }
 }
