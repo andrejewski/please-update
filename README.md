@@ -1,8 +1,7 @@
 <h1 align="center">
 	<br>
 	<br>
-	<img width="320" height="180" src="media/logo.svg" alt="Please Update">
-	<br>
+	<img width="320" height="180" src="https://cdn.rawgit.com/andrejewski/please-update/master/media/logo.svg" alt="Please Update">
 	<br>
 	<br>
 </h1>
@@ -34,14 +33,7 @@ update({
   package: pkg.name,
   version: pkg.version
 }).then(() => {
-  /* prints:
-🎉 {packageName}: new version available
-☠️ Local is {newerVersions.length} releases behind.
-📦 Latest version is {newestVersion}.
-
-🚀 To upgrade, please run:
-{npm|yarn} [--global|global] {update|upgrade} {packageName}
-  */
+  /* message printed if an update is available */
 })
 ```
 
