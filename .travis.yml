@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- node
+- '6'
+script: npm run test-ci
+deploy:
+  provider: npm
+  email: christopher.andrejewski@gmail.com
+  api_key:
+    secure: oJDi9qAnC47h3WqPudBWDo73wTC5tH6E6LB9foiuYDYg2P0pLaSpy/FXfee2wdRQET4bXH/Yvjcz2fVN/zwnyut1fxYmtAY6YXLZgZRfusPYOr+SA0pMj4COG1MGWRE5bSphdpWZqmo6LgynHqiCOao+QeSxE44KDJc5SUsuYLtETISHpEDXqHE3Gq7PNKzPW9kKczDRWlkKLmLLMx7P+iR2fa0ApBM6iGb5kdmayQQxE23XoS1evWp/e/7wNUsLjVUmy4j2W+NnXURXzAt7RrJ6CAPXB/v/X0Nhvx8hwI7aEyYA1gfPfTERAJtEeMuecUQL1yzbO3jiQ4r/OLRwMJncquYxvwKa1Ed4kZ9a7my5w+cYEzKMt5KWAotkKvqujtoPrE7SAxR3dKDikOz2dziqDEjQCZJTfyQ7y14QZeV6ScH7TXCZExHftyJgVcRpxTEgY9L8U8p13GlOc42aPhBNb2mCnLo0/VY29hbyGumVYj2sRQc5AxnPJaxa7bCEZbulT3k5hi6aIsXZVM6o3gvpHXaQ4xLbV/62hfv7kZ1HiYAJYiWf47es2rQKbpIrclMtvKwoCjNsTS7Znhl639y0s+MUgXKBWjJeicUra/6OtCnOW7sOa8zx/RHcxX4SnzKLhOgIZhrdMHMBJBquU9y8s21rZyZHyxlYblee0yA=
+  on:
+    tags: true
+    repo: andrejewski/please-update
+after_success:
+- npm run coveralls
