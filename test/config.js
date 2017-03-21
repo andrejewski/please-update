@@ -89,6 +89,8 @@ test.serial('setLastCheckForPackage() should set the package/check in the config
   const now = Date.now()
   return setLastCheckForPackage(packageName, now)
     .then(() => getLastCheckForPackage(packageName))
-    .then(checked => t.true(checked >= now))
-    .then(() => fs.unlinkSync(checkConfigPath()))
+    .then(checked => {
+      t.true(checked >= now)
+      fs.unlinkSync(checkConfigPath())
+    })
 })

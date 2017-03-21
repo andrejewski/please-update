@@ -54,12 +54,12 @@ test('shouldCheck() should resolve with false if preventUpdate', t => {
 })
 
 test.serial('shouldCheck() should resolve true if there is no config', t => {
-  ensureNoConfig()
   const options = {
     persistCheck: true,
     package: 'please-update',
     checkInterval: 24 * 60 * 60 * 1000
   }
+  ensureNoConfig()
   return shouldCheck(options).then(shouldCheck => {
     t.true(shouldCheck)
   })

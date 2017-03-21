@@ -20,7 +20,7 @@ export function getConfig (filepath) {
         return resolve(data)
       } catch (error) {
         const message = `
-          "${filepath}" is malformed.
+          "${filepath}" is malformed. Text: "${text}"
           Please report this at https://github.com/andrejewski/please-update/issues
         `.trim()
         return reject(new Error(message))
