@@ -122,18 +122,19 @@ test('_check() should resolve the version info', t => {
 })
 
 test('_check(), on error, should resolve unchecked', t => {
-  const source = () => Promise.reject('bad')
+  const error = new Error('bad')
+  const source = () => Promise.reject(error)
   const options = {silenceErrors: true}
   return _check(options, source).then(result => {
     t.deepEqual(result, {
       checked: false,
-      error: 'bad'
+      error
     })
   })
 })
 
 test('_check(), on error, should reject with error unless silenceErrors', t => {
-  const source = () => Promise.reject('bad')
+  const source = () => Promise.reject(new Error('bad'))
   const options = {silenceErrors: false}
   return t.throws(_check(options, source))
 })
@@ -268,4 +269,5 @@ test('display() should call write with the message', t => {
 test('print() should write to stdout', t => {
   // this is mainly for code coverage, this is tough to prove
   print('')
+  t.plan(0)
 })

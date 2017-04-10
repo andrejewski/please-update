@@ -19,7 +19,7 @@ const sampleResponse = {
 
 function mockHttps (statusCode, responseText, error) {
   return {get (url, next) {
-    const body = new Buffer(responseText)
+    const body = Buffer.from(responseText)
     let endCallback
     let dataCallback
     const res = {
