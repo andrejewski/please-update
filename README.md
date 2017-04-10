@@ -18,6 +18,8 @@ npm install please-update
 [![Coverage Status](https://coveralls.io/repos/github/andrejewski/please-update/badge.svg?branch=master)](https://coveralls.io/github/andrejewski/please-update?branch=master)
 
 ## Why even?
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/andrejewski/please-update.svg)](https://greenkeeper.io/)
 Cool CLI tools will notify users when a new version releases so they can update.
 Please Update makes your CLI tool cool, fool.
 
